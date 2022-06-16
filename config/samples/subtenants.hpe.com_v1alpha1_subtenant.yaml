@@ -1,0 +1,6 @@
+apiVersion: subtenants.hpe.com/v1alpha1
+kind: SubTenant
+metadata:
+  name: subtenant-example
+spec:
+  tenantname: pepsi

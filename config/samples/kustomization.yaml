@@ -1,0 +1,4 @@
+## Append samples you want in your CSV to this file as resources ##
+resources:
+- subtenants.hpe.com_v1alpha1_subtenant.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

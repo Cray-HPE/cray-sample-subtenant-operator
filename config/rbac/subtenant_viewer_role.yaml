@@ -1,0 +1,20 @@
+# permissions for end users to view subtenants.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: subtenant-viewer-role
+rules:
+- apiGroups:
+  - subtenants.hpe.com
+  resources:
+  - subtenants
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - subtenants.hpe.com
+  resources:
+  - subtenants/status
+  verbs:
+  - get

@@ -1,0 +1,24 @@
+# permissions for end users to edit subtenants.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: subtenant-editor-role
+rules:
+- apiGroups:
+  - subtenants.hpe.com
+  resources:
+  - subtenants
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - subtenants.hpe.com
+  resources:
+  - subtenants/status
+  verbs:
+  - get

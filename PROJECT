@@ -1,0 +1,19 @@
+domain: hpe.com
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: cray-sample-subtenant-operator
+repo: github.com/Cray-HPE/cray-sample-subtenant-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: hpe.com
+  group: subtenants.hpe.com
+  kind: SubTenant
+  path: github.com/Cray-HPE/cray-sample-subtenant-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"
