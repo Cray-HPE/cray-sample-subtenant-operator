@@ -12,7 +12,7 @@ pipeline {
 
     environment {
         NAME = "cray-sample-subtenant-operator"
-        DESCRIPTION = "Sample implementation of sub-tenant operator""
+        DESCRIPTION = "Sample implementation of sub-tenant operator"
         IS_STABLE = getBuildIsStable()
         VERSION = getDockerBuildVersion(isStable: env.IS_STABLE)
         CHART_VERSION = getChartVersion(name: env.NAME, isStable: env.IS_STABLE)
