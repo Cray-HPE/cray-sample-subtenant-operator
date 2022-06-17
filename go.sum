@@ -58,6 +58,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/Cray-HPE/cray-tapms-operator v0.0.0-20220615194753-ade504bea63e h1:aE0qjmNPuxKLDwa30tcqdW3EYSlhEoiqZBsU6JPm7wQ=
 github.com/Cray-HPE/cray-tapms-operator v0.0.0-20220615194753-ade504bea63e/go.mod h1:PHdukll31vgr69XTqT5NXDhC5OlMvKOQlTzMpc/oflI=
+github.com/Cray-HPE/cray-tapms-operator v0.0.0-20220617185922-0ee4e58a6d72 h1:0sf9ISAquO1zKslqswoHRvsEI7pgXsC0wq6e8KD0/1I=
+github.com/Cray-HPE/cray-tapms-operator v0.0.0-20220617185922-0ee4e58a6d72/go.mod h1:PHdukll31vgr69XTqT5NXDhC5OlMvKOQlTzMpc/oflI=
 github.com/NYTimes/gziphandler v0.0.0-20170623195520-56545f4a5d46/go.mod h1:3wb06e3pkSAbeQ52E9H9iFoQsEEwGN64994WTCIhntQ=
 github.com/NYTimes/gziphandler v1.1.1/go.mod h1:n/CVRwUEOgIxrgPvAQhUUr9oeUtvrhMomdKFjzJNB0c=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=

@@ -90,6 +90,8 @@ func (r *SubTenantReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 		//
 		fmt.Printf("Reconciling tenant: %+v\n", tenant.Spec.TenantName)
 		fmt.Printf("Tenant State: %+v\n", tenant.Status.State)
+		fmt.Printf("Tenant HSM Partition Name: %+v\n", tenant.Status.HsmPartitionName)
+		fmt.Printf("Tenant HSM Group Label: %+v\n", tenant.Status.HsmGroupLabel)
 		fmt.Printf("Tenant xnames: %+v\n", tenant.Status.Xnames)
 		fmt.Printf("Tenant child namespaces: %+v\n", tenant.Status.ChildNamespaces)
 	}
