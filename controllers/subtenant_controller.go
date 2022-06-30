@@ -113,14 +113,15 @@ func (r *SubTenantReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 		// The CRD for the tapms operator has changed -- implement appropriate reconcile
 		// logic for this controller.
 		//
-		fmt.Printf("Reconciling tenant: %+v\n", tenant.Spec.TenantName)
-		fmt.Printf("Tenant State: %+v\n", tenant.Status.State)
-		fmt.Printf("Tenant child namespaces: %+v\n", tenant.Status.ChildNamespaces)
+		fmt.Printf("\nReconciling tenant: '%+v'\n", tenant.Spec.TenantName)
+		fmt.Printf("Tenant State: '%+v'\n", tenant.Status.State)
+		fmt.Printf("Tenant child namespaces: '%+v'\n", tenant.Spec.ChildNamespaces)
 		for _, resource := range tenant.Spec.TenantResources {
-			log.Info(fmt.Sprintf("Tenant HSM Partition Name %s and resource type %s", resource.HsmPartitionName, resource.Type))
-			log.Info(fmt.Sprintf("Tenant HSM Group Label %s and resource type %s", resource.HsmGroupLabel, resource.Type))
-			log.Info(fmt.Sprintf("Tenant xnames %+v and resource type %s", resource.Xnames, resource.Type))
+			fmt.Printf("Tenant HSM Partition Name '%s' and resource type '%s'\n", resource.HsmPartitionName, resource.Type)
+			fmt.Printf("Tenant HSM Group Label '%s' and resource type '%s'\n", resource.HsmGroupLabel, resource.Type)
+			fmt.Printf("Tenant xnames '%+v' and resource type '%s'\n", resource.Xnames, resource.Type)
 		}
+		fmt.Printf("\n")
 	}
 
 	if !subTenantRequest && !tenantRequest {
