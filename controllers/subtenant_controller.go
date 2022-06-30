@@ -1,4 +1,29 @@
 /*
+ *
+ *  MIT License
+ *
+ *  (C) Copyright 2022 Hewlett Packard Enterprise Development LP
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining a
+ *  copy of this software and associated documentation files (the "Software"),
+ *  to deal in the Software without restriction, including without limitation
+ *  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ *  and/or sell copies of the Software, and to permit persons to whom the
+ *  Software is furnished to do so, subject to the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be included
+ *  in all copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ *  OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ *  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *  OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
+/*
 Copyright 2022.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -90,10 +115,12 @@ func (r *SubTenantReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 		//
 		fmt.Printf("Reconciling tenant: %+v\n", tenant.Spec.TenantName)
 		fmt.Printf("Tenant State: %+v\n", tenant.Status.State)
-		fmt.Printf("Tenant HSM Partition Name: %+v\n", tenant.Status.HsmPartitionName)
-		fmt.Printf("Tenant HSM Group Label: %+v\n", tenant.Status.HsmGroupLabel)
-		fmt.Printf("Tenant xnames: %+v\n", tenant.Status.Xnames)
 		fmt.Printf("Tenant child namespaces: %+v\n", tenant.Status.ChildNamespaces)
+		for _, resource := range tenant.Spec.TenantResources {
+			log.Info(fmt.Sprintf("Tenant HSM Partition Name %s and resource type %s", resource.HsmPartitionName, resource.Type))
+			log.Info(fmt.Sprintf("Tenant HSM Group Label %s and resource type %s", resource.HsmGroupLabel, resource.Type))
+			log.Info(fmt.Sprintf("Tenant xnames %+v and resource type %s", resource.Xnames, resource.Type))
+		}
 	}
 
 	if !subTenantRequest && !tenantRequest {
