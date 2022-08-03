@@ -113,12 +113,12 @@ func (r *SubTenantReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 		// The CRD for the tapms operator has changed -- implement appropriate reconcile
 		// logic for this controller.
 		//
-		fmt.Printf("Reconciling tenant: %+v\n", tenant.Spec.TenantName)
-		fmt.Printf("Tenant State: %+v\n", tenant.Status.State)
-		fmt.Printf("Tenant child namespaces: %+v\n", tenant.Status.ChildNamespaces)
+		log.Info(fmt.Sprintf("Reconciling tenant: %+v\n", tenant.Spec.TenantName))
+		log.Info(fmt.Sprintf("Tenant State: %+v\n", tenant.Spec.State))
+		log.Info(fmt.Sprintf("Tenant child namespaces: %+v\n", tenant.Spec.ChildNamespaces))
 		for _, resource := range tenant.Spec.TenantResources {
-			log.Info(fmt.Sprintf("Tenant HSM Partition Name %s and resource type %s", resource.HsmPartitionName, resource.Type))
-			log.Info(fmt.Sprintf("Tenant HSM Group Label %s and resource type %s", resource.HsmGroupLabel, resource.Type))
+			log.Info(fmt.Sprintf("Tenant HSM Partition Name '%s' and resource type %s", resource.HsmPartitionName, resource.Type))
+			log.Info(fmt.Sprintf("Tenant HSM Group Label '%s' and resource type %s", resource.HsmGroupLabel, resource.Type))
 			log.Info(fmt.Sprintf("Tenant xnames %+v and resource type %s", resource.Xnames, resource.Type))
 		}
 	}
